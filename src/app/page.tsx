@@ -112,7 +112,7 @@ export default function Home() {
             </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <p className="text-lg leading-8 text-gray-600">
-              We’re the solution for your pest control needs so don't hesitate and conatct us to get a quote.
+              We’re the solution for your pest control needs so don’t hesitate and conatct us to get a quote.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <a
