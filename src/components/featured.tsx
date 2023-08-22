@@ -1,42 +1,38 @@
 import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  Cog6ToothIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-  ServerIcon,
+  ArrowRightCircleIcon
 } from '@heroicons/react/20/solid'
+
 
 const features = [
   {
-    name: 'Push to deploy.',
+    name: 'Spiders',
     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-    icon: CloudArrowUpIcon,
+    icon: ArrowRightCircleIcon,
   },
   {
-    name: 'SSL certificates.',
+    name: 'Roach’s',
     description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: LockClosedIcon,
+    icon: ArrowRightCircleIcon,
   },
   {
-    name: 'Simple queues.',
+    name: 'Ants',
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
-    icon: ArrowPathIcon,
+    icon: ArrowRightCircleIcon,
   },
   {
-    name: 'Advanced security.',
+    name: 'Fleas',
     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-    icon: FingerPrintIcon,
+    icon: ArrowRightCircleIcon,
   },
   {
-    name: 'Powerful API.',
+    name: 'Rodents',
     description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: Cog6ToothIcon,
+    icon: ArrowRightCircleIcon,
   },
   {
-    name: 'Database backups.',
+    name: 'Live trapping',
     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
-    icon: ServerIcon,
+    icon: ArrowRightCircleIcon,
   },
 ]
 
@@ -56,7 +52,7 @@ export default function Example() {
       <div className="relative overflow-hidden pt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <img
-            src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
+            src="https://images.unsplash.com/photo-1582063289852-62e3ba2747f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt="App screenshot"
             className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
             width={2432}
