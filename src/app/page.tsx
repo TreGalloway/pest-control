@@ -7,10 +7,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Services', href: '/services' },
+  { name: 'Contact Us', href: '/contact' },
 ]
 
 export default function Home() {
@@ -49,7 +47,7 @@ export default function Home() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Log in <span aria-hidden="true">&rarr;</span>
+              Get Quote <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </nav>
@@ -92,7 +90,7 @@ export default function Home() {
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Log in
+                    Get Quote
                   </a>
                 </div>
               </div>
@@ -117,7 +115,7 @@ export default function Home() {
               <div className="mt-10 flex items-center gap-x-6">
                 <a
                   href="#"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="rounded-md bg-sky-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Get Quote
                 </a>
