@@ -33,8 +33,7 @@ export default function Contact() {
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get in touch</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt
-              integer elementum id sem. Arcu sed malesuada et magna.
+            We’ll get in with you as soon as possible. We’re looking forward to hearing from you.
             </p>
             <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
               <div className="flex gap-x-4">
@@ -57,6 +56,11 @@ export default function Contact() {
                   <a className="hover:text-gray-900" href="mailto:pipepiperpestcontrol@gmail.com">
                     pipepiperpestcontrol@gmail.com
                   </a>
+                  <img
+                className="h-34 w-auto"
+                src="https://res.cloudinary.com/dq6endwuq/image/upload/v1693326863/pestcontrol_zvukmy.svg"
+                alt="logo"
+              />
                 </dd>
               </div>
             </dl>
