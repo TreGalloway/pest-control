@@ -1,42 +1,41 @@
-'use server'
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react';
+import axios from 'axios';
+
+import { toast } from 'react-hot-toast';
 
 export default function Contact() {
-  const [formStatus, setFormStatus] = useState('');
 
-  const [state, setState] = useState({
-    'first-name': '',
-    'last-name': '',
-    email: '',
-    'phone-number': '',
-    message: ''
-  });
-
-  const handleChange = (event:any) => {
-    setState({ ...state, [event.target.name]: event.target.value });
-  };
-
-  const handleSubmit = async (event:any) => {
-    event.preventDefault();
-    const response = await fetch('/api/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        'first-name': state['first-name'],
-        email: state.email,
-        message: state.message,
-      }),
-    });
-  
-    if (response.ok) {
-      setFormStatus('Email sent successfully');
-    } else {
-      setFormStatus('Error sending email');
-    }
-  };
+  const [firstName, setFirstName] = useState('');
+       const [lastName, setLastName] = useState('');
+       const [email, setEmail] = useState('');
+       const [phoneNumber, setPhoneNumber] = useState('');
+       const [message, setMessage] = useState('');
+     
+       const handleSubmit = async (e: React.FormEvent) => {
+         e.preventDefault();
+     
+         try {
+           // Send the form data to the API route
+           await axios.post('/api/send', {
+             firstName,
+             lastName,
+             email,
+             phoneNumber,
+             message,
+           });
+     
+           // Reset the form fields
+           setFirstName('');
+           setLastName('');
+           setEmail('');
+           setPhoneNumber('');
+           setMessage('');
+         } catch (error) {
+           console.error(error);
+         }
+         toast.success(`Hey ${firstName}, your message was sent successfully!`)
+       };
   
   return (
     <div className="relative isolate bg-white">
@@ -115,8 +114,8 @@ export default function Contact() {
                     name="first-name"
                     id="first-name"
                     autoComplete="given-name"
-                    onChange={handleChange}
-                    value={state['first-name']}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    value={firstName}
                     required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -132,8 +131,8 @@ export default function Contact() {
                     name="last-name"
                     id="last-name"
                     autoComplete="family-name"
-                    onChange={handleChange}
-                    value={state['last-name']}
+                    onChange={(e) => setLastName(e.target.value)}
+                    value={lastName}
                     required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -149,8 +148,8 @@ export default function Contact() {
                     name="email"
                     id="email"
                     autoComplete="email"
-                    onChange={handleChange}
-                    value={state.email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
                     required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -166,8 +165,8 @@ export default function Contact() {
                     name="phone-number"
                     id="phone-number"
                     autoComplete="tel"
-                    onChange={handleChange}
-                    value={state['phone-number']}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    value={phoneNumber}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -182,8 +181,8 @@ export default function Contact() {
                     id="message"
                     rows={4}
                     required
-                    onChange={handleChange}
-                    value={state.message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     defaultValue={''}
                   />
