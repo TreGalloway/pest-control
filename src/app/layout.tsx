@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Toaster position="bottom-right" toastOptions={{duration:300}} />
+        <Toaster position="bottom-right" />
         <Nav/>{children}</body>
     </html>
   )
