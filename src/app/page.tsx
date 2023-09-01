@@ -5,10 +5,6 @@ import FAQ from '@/components/faq'
 
 export default function Home() {
 
-  // function scrollToSection(sectionId: string) {
-  //   const section = document.getElementById(sectionId);
-  //   section.scrollIntoView({ behavior: 'smooth' });
-  // } 
 
   return (
     <div className="bg-white">
@@ -29,16 +25,16 @@ export default function Home() {
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <button
-                  // onClick={() => scrollToSection('contactSection')}
+                  ref="/contact"
                   className="rounded-md bg-sky-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
                 >
                   Get Your Quote!
                 </button>
-                {/* <a
-                  onClick={() => scrollToSection('servicesSection')} 
+                <a
+                ref='/services'
                  className="text-sm font-semibold leading-6 text-gray-900">
                   Services <span aria-hidden="true">→</span>
-                </a> */}
+                </a>
               </div>
             </div>
             <img
