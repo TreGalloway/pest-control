@@ -1,12 +1,14 @@
 'use client'
 import Contact from '@/components/contact-form'
 import Featured from '@/components/featured'
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import FAQ from '@/components/faq'
 
 export default function Home() {
+
+  // function scrollToSection(sectionId: string) {
+  //   const section = document.getElementById(sectionId);
+  //   section.scrollIntoView({ behavior: 'smooth' });
+  // } 
 
   return (
     <div className="bg-white">
@@ -26,15 +28,17 @@ export default function Home() {
               We’re the solution for your pest control needs so don’t hesitate and conatct us to get a quote.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <a
-                  href="#"
-                  className="rounded-md bg-sky-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                <button
+                  // onClick={() => scrollToSection('contactSection')}
+                  className="rounded-md bg-sky-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"
                 >
-                  Get Quote
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                  Get Your Quote!
+                </button>
+                {/* <a
+                  onClick={() => scrollToSection('servicesSection')} 
+                 className="text-sm font-semibold leading-6 text-gray-900">
                   Services <span aria-hidden="true">→</span>
-                </a>
+                </a> */}
               </div>
             </div>
             <img
@@ -46,9 +50,10 @@ export default function Home() {
         </div>
         <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" />
       </div>
-       <Featured/>
+      <div id='servicesSection'><Featured /></div>
        <FAQ/>
-      <Contact/>
+       <div id='contactSection'><Contact/></div>
+      
     </div>
   )
 }

@@ -6,32 +6,32 @@ import {
 const features = [
   {
     name: 'Spiders',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+    description: 'Bites can sometimes result in mild skin irritation and allergic reactions for susceptible individuals. Additionally, in rare cases, certain venomous spider species can cause more severe symptoms and require medical attention.',
     icon: ArrowRightCircleIcon,
   },
   {
     name: 'Roach’s',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    description: 'Cockroaches are highly adaptable insects and can contaminate food and surfaces with bacteria and allergens, damage organic materials like books and fabrics, and cause asthma and allergic reactions in humans',
     icon: ArrowRightCircleIcon,
   },
   {
     name: 'Ants',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
+    description: 'Ants can cause various damages, including structural damage by tunneling through wood and insulation, compromising the stability of buildings and other structures.',
     icon: ArrowRightCircleIcon,
   },
   {
     name: 'Fleas',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+    description: 'Fleas can cause harm by biting and irritating their hosts, leading to discomfort, itching, and potential skin infections. Additionally, fleas are known carriers of diseases such as typhus and tapeworms, posing a health risk to both humans and animals.',
     icon: ArrowRightCircleIcon,
   },
   {
     name: 'Rodents',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    description: 'Can cause significant damage in various ways. They have a tendency to gnaw on electrical wiring, leading to potential fire hazards in homes and buildings.',
     icon: ArrowRightCircleIcon,
   },
   {
     name: 'Live trapping',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
+    description: 'Any critter that is not a rodent, we can live trap and relocate.',
     icon: ArrowRightCircleIcon,
   },
 ]
