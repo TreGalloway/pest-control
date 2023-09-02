@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
+import { useForm, ValidationError } from '@formspree/react'
+import { toast } from 'react-hot-toast'
+import { useRef, useEffect } from 'react'
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')
@@ -9,6 +12,21 @@ function classNames(...classes: string[]) {
 
 export default function Contact() {
 	const [agreed, setAgreed] = useState(false)
+	const formRef = useRef<HTMLFormElement>(null)
+
+	const [state, handleSubmit] = useForm('mnqkvdvz')
+
+	useEffect(() => {
+		if (state.succeeded) {
+			toast.success(`Hey, your message was sent successfully!`)
+			if (formRef.current) {
+				formRef.current.reset()
+			}
+		} else if (state.errors) {
+			// An error occurred. Display an error toast message
+			toast.error('Sorry, an error occurred. Please try again.')
+		}
+	}, [state.succeeded, state.errors])
 
 	return (
 		<div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -30,7 +48,7 @@ export default function Contact() {
 					We’ll get in with you as soon as possible. We’re looking forward to hearing from you.
 				</p>
 			</div>
-			<form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+			<form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
 				<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 					<div>
 						<label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -42,8 +60,11 @@ export default function Contact() {
 								name="first-name"
 								id="first-name"
 								autoComplete="given-name"
+								placeholder="Required"
+								required
 								className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 							/>
+							<ValidationError field="first-name" prefix="First name" errors={state.errors} />
 						</div>
 					</div>
 					<div>
@@ -58,22 +79,10 @@ export default function Contact() {
 								autoComplete="family-name"
 								className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 							/>
+							<ValidationError field="last-name" prefix="Last name" errors={state.errors} />
 						</div>
 					</div>
-					<div className="sm:col-span-2">
-						<label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
-							Company
-						</label>
-						<div className="mt-2.5">
-							<input
-								type="text"
-								name="company"
-								id="company"
-								autoComplete="organization"
-								className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-							/>
-						</div>
-					</div>
+
 					<div className="sm:col-span-2">
 						<label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
 							Email
@@ -84,8 +93,11 @@ export default function Contact() {
 								name="email"
 								id="email"
 								autoComplete="email"
+								placeholder="Required"
+								required
 								className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 							/>
+							<ValidationError field="email" prefix="Email" errors={state.errors} />
 						</div>
 					</div>
 					<div className="sm:col-span-2">
@@ -118,6 +130,7 @@ export default function Contact() {
 								autoComplete="tel"
 								className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 							/>
+							<ValidationError field="phone-number" prefix="Phone number" errors={state.errors} />
 						</div>
 					</div>
 					<div className="sm:col-span-2">
@@ -129,12 +142,14 @@ export default function Contact() {
 								name="message"
 								id="message"
 								rows={4}
+								placeholder="Give us a brief description of your pest problem."
 								className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								defaultValue={''}
 							/>
+							<ValidationError field="message" prefix="Message" errors={state.errors} />
 						</div>
 					</div>
-					<Switch.Group as="div" className="flex gap-x-4 sm:col-span-2">
+					{/* <Switch.Group as="div" className="flex gap-x-4 sm:col-span-2">
 						<div className="flex h-6 items-center">
 							<Switch
 								checked={agreed}
@@ -161,7 +176,7 @@ export default function Contact() {
 							</a>
 							.
 						</Switch.Label>
-					</Switch.Group>
+					</Switch.Group> */}
 				</div>
 				<div className="mt-10">
 					<button
