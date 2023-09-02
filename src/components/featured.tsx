@@ -14,7 +14,7 @@ const features = [
 		icon: ArrowRightCircleIcon
 	},
 	{
-		name: 'Some people are allergic to bee and wasp stings, which can cause severe reactions and require medical attention.',
+		name: 'Bee’s and Wasp’s',
 		description:
 			'Some people are allergic to bee and wasp stings, which can cause severe reactions and require medical attention.',
 		icon: ArrowRightCircleIcon
