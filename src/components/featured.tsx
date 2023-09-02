@@ -44,7 +44,7 @@ export default function Example() {
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl sm:text-center">
 					<h2 className="text-base font-semibold leading-7 text-sky-600">We Take Care of All Pests</h2>
-					<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">We Your Back!</p>
+					<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">We Have Your Back!</p>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
 						These are the most common pests we deal with. If you have a pest that is not listed here, please contact us
 					</p>
