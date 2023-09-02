@@ -3,7 +3,7 @@ const features = [
 		name: 'Bees and Wasps',
 		description:
 			'Bees and wasps are flying insects that can be found in various environments. They can build nests in trees, attics, or other structures, and can sting humans when they feel threatened. Some people are allergic to bee and wasp stings, which can cause severe reactions and require medical attention.',
-		imgsrc: 'https://res.cloudinary.com/dq6endwuq/image/upload/v1693683036/wasps_wyg7mz.webp',
+		imageSrc: 'https://res.cloudinary.com/dq6endwuq/image/upload/v1693682782/bee-safe-GkknyQzyK98-unsplash_mye18o.jpg',
 		imageAlt: 'Photo by Bee Safe on Unsplash'
 	},
 	{
